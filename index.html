@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/src/style.css" />
+		<title>Draggable window</title>
+		<script src="/src/radhe.js" defer></script>
+	</head>
+	<body>
+		<!-- <h1>Radhey Shyam</h1> -->
+		<div data-window class="draggable-window">
+			<header class="" id="draggable-area" data-dragging-area>
+				<div class="left">Window</div>
+
+				<div class="right">
+					<div data-tab-btn data-type="min" class="minimize"></div>
+					<div data-tab-btn data-type="max" class="maximize"></div>
+					<div data-tab-btn data-type="close" class="close"></div>
+				</div>
+			</header>
+
+			<div class="content">
+				<h3>Hello World</h3>
+			</div>
+		</div>
+	</body>
+</html>

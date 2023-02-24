@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	background-color: #4158d0;
+	background-image: linear-gradient(
+		43deg,
+		#4158d0 0%,
+		#c850c0 46%,
+		#ffcc70 100%
+	);
+
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+
+.draggable-window {
+	background-color: hsla(0, 0%, 0%, 0.6);
+	position: absolute;
+	top: var(--mouse-y);
+	left: var(--mouse-x);
+	width: 700px;
+	height: 500px;
+	min-width: 400px;
+	min-height: 300px;
+	border-radius: 10px;
+	overflow: hidden;
+	transition: scale 500ms;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+	resize: both;
+}
+.draggable-window:active {
+	scale: 1.01;
+}
+
+.draggable-window > header {
+	display: flex;
+	cursor: grab;
+	user-select: none;
+	justify-content: space-between;
+	padding: 1rem;
+	background-color: hsla(0, 0%, 0%, 0.3);
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.draggable-window > header > .left {
+	font-weight: bold;
+}
+
+.draggable-window > header > .right {
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.draggable-window > header > .right div {
+	background-color: white;
+	cursor: pointer;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+.draggable-window > header > .right div:hover {
+	box-shadow: 0 0 10px var(--control-color);
+	transition: box-shadow 200ms ease-in-out;
+}
+
+.draggable-window > header > .right .close {
+	--control-color: hsl(0, 100%, 50%);
+	background-color: var(--control-color);
+}
+
+.draggable-window > header > .right .minimize {
+	--control-color: hsl(60, 100%, 50%);
+	background-color: var(--control-color);
+}
+
+.draggable-window > header > .right .maximize {
+	--control-color: hsl(120, 100%, 50%);
+	background-color: var(--control-color);
+}
+.draggable-window > .content {
+	height: 100%;
+	width: 100%;
+}
+
+.dragging {
+	border-bottom: 1px solid rgb(139, 139, 139);
+}
+
+.taskbar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 3rem;
+	border-top: 1px solid gray;
+	z-index: 2;
+}
+
+.content {
+	overflow: hidden;
+}
